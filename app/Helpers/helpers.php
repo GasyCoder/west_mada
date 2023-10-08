@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Periode;
 use App\Models\Reservation;
 use App\Models\CategoryStock;
+use App\Models\SettingOne;
 use Illuminate\Support\Facades\Validator;
 
 // In helpers.php
@@ -149,6 +150,23 @@ function validateStepTwo($data, $showPrixTotal)
     return validator($data, $rules)->validate();
 }
 
+function AppName()
+{
+    $setting = SettingOne::first();
+    if ($setting) {
+        return $setting->app_name;
+    }
+    return '';
+}
+
+function AppLogo()
+{
+    $setting = SettingOne::first();
+    if ($setting) {
+        return $setting->logo;
+    }
+    return '';
+}
 
 function checkAvailability($date_debut, $date_fin, $hotel_id)
 {

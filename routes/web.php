@@ -9,6 +9,7 @@ use App\Livewire\Periodes;
 use App\Livewire\Dashboard;
 use App\Livewire\RoomTypes;
 use App\Livewire\Guard\Users;
+use App\Livewire\SettingsOne;
 use App\Livewire\Reservations;
 use App\Livewire\CategoryStocks;
 use App\Livewire\Guard\RoleIndex;
@@ -17,6 +18,7 @@ use App\Livewire\WestMada\HomeOne;
 use App\Livewire\WestMada\Navbars;
 use App\Livewire\WestMada\Onglets;
 use App\Livewire\WestMada\Sliders;
+use App\Livewire\WestMada\Stories;
 use App\Livewire\WestMada\Contentes;
 use App\Livewire\WestMada\PagesType;
 use App\Livewire\WestMada\WestPanel;
@@ -25,7 +27,6 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\WestMada\PageContent;
 use App\Livewire\WestMada\ServiceShow;
 use App\Livewire\Guard\PermissionIndex;
-use App\Livewire\WestMada\Stories;
 use App\Livewire\WestMada\PageShowType;
 use App\Livewire\WestMada\ServicePages;
 
@@ -120,6 +121,8 @@ Route::group(['domain' => 'admin.westmada.test'], function () {
                 Route::get('/services-page', ServicePages::class)->name('services-page');
 
                 Route::get('/photo-story', Stories::class)->name('photo-story');
+
+                Route::get('parametre', SettingsOne::class)->name('parametre');
 
         });
 });

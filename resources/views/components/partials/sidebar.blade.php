@@ -1,16 +1,20 @@
 <div class="nk-sidebar nk-sidebar-fixed is-dark nk-sidebar-mobile" data-content="sidebarMenu">
     <div class="nk-sidebar-element nk-sidebar-head">
         <div class="nk-menu-trigger">
-            <a class="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu" href="#"><em
-                    class="icon ni ni-arrow-left"></em></a><a
-                class="nk-nav-compact nk-quick-nav-icon d-none d-xl-inline-flex" data-target="sidebarMenu" href="#"><em
-                    class="icon ni ni-menu"></em></a>
+            <a class="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu" href="#">
+                <em class="icon ni ni-arrow-left"></em>
+            </a>
+            <a class="nk-nav-compact nk-quick-nav-icon d-none d-xl-inline-flex" data-target="sidebarMenu" href="#">
+                <em class="icon ni ni-menu"></em>
+            </a>
         </div>
         <div class="nk-sidebar-brand">
-            <img alt="logo" class="logo-light logo-img" src="{{asset('assets/images/logo.png')}}"
-                srcset="{{asset('assets/images/logo2x.png')}} 2x">
-            <img alt="logo-dark" class="logo-dark logo-img" src="{{asset('assets/images/logo-dark.png')}}"
-                srcset="{{asset('assets/images/logo-dark2x.png')}} 2x"></a>
+            <a href="/dashboard" wire:navigate>
+           <img alt="logo" class="logo-light logo-img" src="{{ asset('storage/' . AppLogo()) }}"
+            srcset="{{ asset('storage/' . AppLogo()) }} 2x">
+        <img alt="logo-dark" class="logo-dark logo-img" src="{{ asset('storage/' . AppLogo()) }}"
+            srcset="{{ asset('storage/' . AppLogo()) }} 2x">
+            </a>
         </div>
     </div>
     <div class="nk-sidebar-element nk-sidebar-body">
@@ -164,25 +168,12 @@
                     @endcan
                     @can('super-admin')
                     <li class="nk-menu-item has-sub">
-                        <a class="nk-menu-link nk-menu-toggle" href="#">
+                        <a class="nk-menu-link" href="/parametre" wire:navigate>
                             <span class="nk-menu-icon">
                                 <em class="icon ni ni-setting-alt-fill"></em>
                             </span>
                             <span class="nk-menu-text">Paramètres</span>
                         </a>
-                        <ul class="nk-menu-sub">
-                            <li class="nk-menu-item">
-                                <a class="nk-menu-link" href="#" wire:navigate>
-                                    <span class="nk-menu-text">Site Panel</span>
-                                </a>
-                            </li>
-                            <li class="nk-menu-item">
-                                <a class="nk-menu-link" href="invoice-list.html">
-                                    <span class="nk-menu-text">Gestion des pages
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                     <li class="nk-menu-heading">
                         <h6 class="overline-title text-primary-alt">Interface Web Site</h6>

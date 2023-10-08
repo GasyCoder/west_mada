@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+   <title>@hasSection('title') @yield('title') | @endif {{ AppName() }}
+    </title>
     <!-- All Generated styles form dashlite -->
     <link rel="stylesheet" href="{{asset('assets/css/dashlite.css')}}">
     <!-- This file is for you to include your own styles -->

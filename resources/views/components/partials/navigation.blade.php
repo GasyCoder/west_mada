@@ -12,41 +12,8 @@
                 <img alt="logo-dark" class="logo-dark logo-img" src="{{asset('assets/images/logo-dark.png')}}" 
                       srcset="{{asset('assets/images/logo-dark2x.png')}} 2x"></a>
             </div>
-            <div class="nk-header-news d-none d-xl-block">
-                <div class="nk-news-list">
-                    <a class="nk-news-item" href="#">
-                        <div class="nk-news-icon">
-                            {{-- <em class="icon ni ni-card-view"></em> --}}
-                        </div>
-                        <div class="nk-news-text">
-                            {{-- <p>Do you know the latest update of 2022? <span>A overview of our is now
-                                    available on YouTube</span></p><em class="icon ni ni-external"></em> --}}
-                        </div>
-                    </a>
-                </div>
-            </div>
             <div class="nk-header-tools">
                 <ul class="nk-quick-nav">
-                    {{-- <li class="dropdown language-dropdown d-none d-sm-block me-n1">
-                        <a class="dropdown-toggle nk-quick-nav-icon" data-bs-toggle="dropdown" href="#">
-                            <div class="quick-icon border border-light"><img alt="" class="icon"
-                                src="{{asset('assets/images/flags/english-sq.png')}}"></div>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-s1">
-                            <ul class="language-list">
-                                <li>
-                                    <a class="language-item" href="#"><img alt="" class="language-flag"
-                                    src="{{asset('assets/images/flags/english.png')}}"><span
-                                            class="language-name">{{__('English')}}</span></a>
-                                </li>
-                                <li>
-                                    <a class="language-item" href="#"><img alt="" class="language-flag"
-                                    src="{{asset('assets/images/flags/french.png')}}"><span
-                                            class="language-name">{{__('Français')}}</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li> --}}
                     <li class="dropdown user-dropdown">
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
                             <div class="user-toggle">
@@ -83,24 +50,20 @@
                             </div>
                             <div class="dropdown-inner">
                                 <ul class="link-list">
+                                    @can('super-admin')
+                                    <li>
+                                        <a href="/parametre" wire:navigate>
+                                            <em class="icon ni ni-setting"></em>
+                                            <span>Paramètres</span>
+                                        </a>
+                                    </li>
                                     <li>
                                         <a href="#">
-                                            <em class="icon ni ni-user-alt"></em>
-                                            <span>Mon profil</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="settings.html">
-                                            <em class="icon ni ni-security"></em>
-                                            <span>Sécurité</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="settings-activity-log.html">
                                             <em class="icon ni ni-activity-alt"></em>
                                             <span>Activité de connexion</span>
                                         </a>
                                     </li>
+                                    @endcan
                                 </ul>
                             </div>
                             <div class="dropdown-inner">
