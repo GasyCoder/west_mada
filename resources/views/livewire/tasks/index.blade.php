@@ -1,0 +1,15 @@
+<div>
+    @if($show)
+        @include('livewire.tasks.liste')
+        @include('livewire.tasks.detail')
+    @elseif($updateMode)
+        @include('livewire.tasks.liste')
+        @include('livewire.tasks.edit')
+    @elseif($cart)
+        @include('livewire.tasks.liste')
+        @include('livewire.tasks.cart.achat')
+    @else   
+        @include('livewire.tasks.liste')
+        @include('livewire.tasks.create')
+    @endif
+</div>

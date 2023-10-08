@@ -1,0 +1,1 @@
+<x-journal-stocks :mois="$mois" />
